@@ -1977,7 +1977,7 @@ def printStructure():
         Returns a string in triple quotes containing the `DataStructureExamples` class
         and all its function names.
         """
-        structure = """
+        return """
         # DataStructureExamples Class and Functions
 
         ## Class: DataStructureExamples
@@ -1994,7 +1994,7 @@ def printStructure():
         - graph_examples()
         - printStructureOnly()
         """
-        return structure
+       
 
 # ------------------------- Main -------------------------
 
