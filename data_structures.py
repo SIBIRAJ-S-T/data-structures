@@ -1227,13 +1227,569 @@ class Graph:
 # ------------------------- Print All Functions -------------------------
 
 def printAlls():
-    """Print all functions and classes in this file."""
-    import inspect
-    for name, obj in inspect.getmembers(inspect.getmodule(inspect.currentframe())):
-        if inspect.isclass(obj) or inspect.isfunction(obj):
-            print(f"--- {name} ---")
-            print(inspect.getdoc(obj))
-            print()
+    """
+    Returns a string in triple quotes that describes the structure of classes and functions
+    in the `data_structures.py` file, along with examples for how to use them.
+    """
+    structure = """
+    # Structure of Classes and Functions in data_structures.py
+
+    ## 1. Arrays Class
+    - traverse(arr): Traverse an array.
+      Example:
+        Arrays.traverse([1, 2, 3])  # Output: 1 2 3
+
+    - insert(arr, index, value): Insert an element into an array at a specific index.
+      Example:
+        Arrays.insert([1, 2, 3], 1, 5)  # Output: [1, 5, 2, 3]
+
+    - delete(arr, index): Delete an element from an array at a specific index.
+      Example:
+        Arrays.delete([1, 2, 3], 1)  # Output: [1, 3]
+
+    - prefix_sum(arr): Calculate the prefix sum of an array.
+      Example:
+        Arrays.prefix_sum([1, 2, 3, 4])  # Output: [1, 3, 6, 10]
+
+    - suffix_sum(arr): Calculate the suffix sum of an array.
+      Example:
+        Arrays.suffix_sum([1, 2, 3, 4])  # Output: [10, 9, 7, 4]
+
+    - two_pointers(arr, target): Two pointers technique to find pairs in a sorted array.
+      Example:
+        Arrays.two_pointers([1, 2, 3, 4], 5)  # Output: (1, 2)
+
+    - sliding_window(arr, k): Sliding window technique to find maximum sum of subarrays of size k.
+      Example:
+        Arrays.sliding_window([1, 2, 3, 4, 5], 3)  # Output: 12
+
+    - kadane(arr): Kadane's algorithm to find maximum subarray sum.
+      Example:
+        Arrays.kadane([-2, 1, -3, 4, -1, 2, 1, -5, 4])  # Output: 6
+
+    - bubble_sort(arr): Bubble sort implementation.
+      Example:
+        Arrays.bubble_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - selection_sort(arr): Selection sort implementation.
+      Example:
+        Arrays.selection_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - insertion_sort(arr): Insertion sort implementation.
+      Example:
+        Arrays.insertion_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - merge_sort(arr): Merge sort implementation.
+      Example:
+        Arrays.merge_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - quick_sort(arr): Quick sort implementation.
+      Example:
+        Arrays.quick_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - counting_sort(arr): Counting sort implementation.
+      Example:
+        Arrays.counting_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - radix_sort(arr): Radix sort implementation.
+      Example:
+        Arrays.radix_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - linear_search(arr, target): Linear search implementation.
+      Example:
+        Arrays.linear_search([1, 2, 3, 4], 3)  # Output: 2
+
+    - binary_search(arr, target): Binary search implementation.
+      Example:
+        Arrays.binary_search([1, 2, 3, 4], 3)  # Output: 2
+
+    - dutch_national_flag(arr): Dutch National Flag algorithm for 3-way partitioning.
+      Example:
+        Arrays.dutch_national_flag([2, 0, 2, 1, 1, 0])  # Output: [0, 0, 1, 1, 2, 2]
+
+    - rotate_array(arr, k): Rotate an array using the reversal algorithm.
+      Example:
+        Arrays.rotate_array([1, 2, 3, 4, 5], 2)  # Output: [4, 5, 1, 2, 3]
+
+    - majority_element(arr): Moore's Voting Algorithm to find majority element.
+      Example:
+        Arrays.majority_element([3, 3, 4, 2, 4, 4, 2, 4, 4])  # Output: 4
+
+    - merge_intervals(intervals): Merge overlapping intervals.
+      Example:
+        Arrays.merge_intervals([[1, 3], [2, 6], [8, 10]])  # Output: [[1, 6], [8, 10]]
+
+
+    ## 2. Strings Class
+    - reverse_string(s): Reverse a string.
+      Example:
+        Strings.reverse_string("hello")  # Output: "olleh"
+
+    - is_palindrome(s): Check if a string is a palindrome.
+      Example:
+        Strings.is_palindrome("madam")  # Output: True
+
+    - substrings(s): Generate all substrings of a string.
+      Example:
+        Strings.substrings("abc")  # Output: ['a', 'ab', 'abc', 'b', 'bc', 'c']
+
+    - kmp(s, pattern): KMP algorithm for pattern matching.
+      Example:
+        Strings.kmp("hello", "ll")  # Output: 2
+
+    - rabin_karp(s, pattern): Rabin-Karp algorithm for pattern matching.
+      Example:
+        Strings.rabin_karp("hello", "ll")  # Output: 2
+
+    - z_algorithm(s): Z algorithm for pattern matching.
+      Example:
+        Strings.z_algorithm("hello")  # Output: [0, 0, 0, 0, 0]
+
+    - rolling_hash(s, base=256, mod=101): Rolling hash function.
+      Example:
+        Strings.rolling_hash("hello")  # Output: 52
+
+    - lcs(s1, s2): Longest Common Subsequence (LCS) using dynamic programming.
+      Example:
+        Strings.lcs("abcde", "ace")  # Output: 3
+
+    - longest_palindromic_substring(s): Manacher's algorithm to find the longest palindromic substring.
+      Example:
+        Strings.longest_palindromic_substring("babad")  # Output: "bab"
+
+    - are_anagrams(s1, s2): Check if two strings are anagrams.
+      Example:
+        Strings.are_anagrams("listen", "silent")  # Output: True
+
+    - run_length_encoding(s): Run-length encoding for string compression.
+      Example:
+        Strings.run_length_encoding("aaabbbcc")  # Output: "a3b3c2"
+
+
+    ## 3. LinkedList Class
+    - append(data): Append a node to the end of the linked list.
+      Example:
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        # Linked List: 1 -> 2
+
+    - prepend(data): Prepend a node to the beginning of the linked list.
+      Example:
+        ll = LinkedList()
+        ll.prepend(1)
+        ll.prepend(2)
+        # Linked List: 2 -> 1
+
+    - delete(key): Delete a node with the given key.
+      Example:
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        ll.delete(1)
+        # Linked List: 2
+
+    - reverse(): Reverse the linked list.
+      Example:
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        ll.reverse()
+        # Linked List: 2 -> 1
+
+    - detect_cycle(): Detect a cycle in the linked list using Floyd's algorithm.
+      Example:
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        ll.head.next.next = ll.head  # Creates a cycle
+        ll.detect_cycle()  # Output: True
+
+    - remove_nth_from_end(n): Remove the nth node from the end of the linked list.
+      Example:
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        ll.append(3)
+        ll.remove_nth_from_end(2)
+        # Linked List: 1 -> 3
+
+    - merge_sorted_lists(l2): Merge two sorted linked lists.
+      Example:
+        ll1 = LinkedList()
+        ll1.append(1)
+        ll1.append(3)
+        ll2 = LinkedList()
+        ll2.append(2)
+        ll2.append(4)
+        ll1.merge_sorted_lists(ll2)
+        # Linked List: 1 -> 2 -> 3 -> 4
+
+    - find_intersection(l2): Find the intersection point of two linked lists.
+      Example:
+        ll1 = LinkedList()
+        ll1.append(1)
+        ll1.append(2)
+        ll2 = LinkedList()
+        ll2.append(3)
+        ll2.head.next = ll1.head.next  # Creates intersection
+        ll1.find_intersection(ll2)  # Output: Node with value 2
+
+    - clone_with_random_pointers(): Clone a linked list with random pointers.
+      Example:
+        ll = LinkedList()
+        ll.append(1)
+        ll.append(2)
+        cloned_ll = ll.clone_with_random_pointers()
+        # Cloned Linked List: 1 -> 2
+
+
+    ## 4. Stack Class
+    - push(item): Push an item onto the stack.
+      Example:
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        # Stack: [1, 2]
+
+    - pop(): Pop an item from the stack.
+      Example:
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.pop()  # Output: 2
+
+    - top(): Get the top item of the stack.
+      Example:
+        stack = Stack()
+        stack.push(1)
+        stack.push(2)
+        stack.top()  # Output: 2
+
+    - is_empty(): Check if the stack is empty.
+      Example:
+        stack = Stack()
+        stack.is_empty()  # Output: True
+
+    - min_stack(): Get the minimum element in the stack.
+      Example:
+        stack = Stack()
+        stack.push(2)
+        stack.push(1)
+        stack.min_stack()  # Output: 1
+
+
+    ## 5. Queue Class
+    - enqueue(item): Enqueue an item into the queue.
+      Example:
+        queue = Queue()
+        queue.enqueue(1)
+        queue.enqueue(2)
+        # Queue: [1, 2]
+
+    - dequeue(): Dequeue an item from the queue.
+      Example:
+        queue = Queue()
+        queue.enqueue(1)
+        queue.enqueue(2)
+        queue.dequeue()  # Output: 1
+
+    - is_empty(): Check if the queue is empty.
+      Example:
+        queue = Queue()
+        queue.is_empty()  # Output: True
+
+    - circular_queue(size): Implement a circular queue.
+      Example:
+        queue = Queue()
+        queue.circular_queue(5)
+        queue.enqueue(1)
+        queue.enqueue(2)
+        # Circular Queue: [1, 2, None, None, None]
+
+    - next_greater_element(arr): Find the next greater element for each element in the array.
+      Example:
+        queue = Queue()
+        queue.next_greater_element([4, 5, 2, 25])  # Output: [5, 25, 25, -1]
+
+    - balanced_parentheses(s): Check if the parentheses are balanced.
+      Example:
+        queue = Queue()
+        queue.balanced_parentheses("()[]{}")  # Output: True
+
+    - lru_cache(capacity): Implement an LRU cache.
+      Example:
+        cache = Queue()
+        cache.lru_cache(2)
+        cache.put(1, 1)
+        cache.put(2, 2)
+        cache.get(1)  # Output: 1
+
+    - sliding_window_maximum(arr, k): Find the maximum in each sliding window of size k.
+      Example:
+        queue = Queue()
+        queue.sliding_window_maximum([1, 3, -1, -3, 5, 3, 6, 7], 3)  # Output: [3, 3, 5, 5, 6, 7]
+
+
+    ## 6. Hashing Class
+    - hash_table(): Create a hash table.
+      Example:
+        hash_table = Hashing.hash_table()
+        hash_table["key"] = "value"
+        # Hash Table: {"key": "value"}
+
+    - open_addressing(): Open addressing for collision resolution.
+      Example:
+        Hashing.open_addressing()
+
+    - separate_chaining(): Separate chaining for collision resolution.
+      Example:
+        Hashing.separate_chaining()
+
+    - count_distinct_elements(arr): Count distinct elements in an array.
+      Example:
+        Hashing.count_distinct_elements([1, 2, 2, 3])  # Output: 3
+
+    - longest_consecutive_subsequence(arr): Find the longest consecutive subsequence.
+      Example:
+        Hashing.longest_consecutive_subsequence([100, 4, 200, 1, 3, 2])  # Output: 4
+
+    - two_sum(arr, target): Find two numbers that add up to the target.
+      Example:
+        Hashing.two_sum([2, 7, 11, 15], 9)  # Output: (0, 1)
+
+    - group_anagrams(strs): Group anagrams together.
+      Example:
+        Hashing.group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+        # Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]
+
+
+    ## 7. BinaryTree Class
+    - inorder_traversal(root): Inorder traversal of a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().inorder_traversal(root)  # Output: [2, 1, 3]
+
+    - preorder_traversal(root): Preorder traversal of a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().preorder_traversal(root)  # Output: [1, 2, 3]
+
+    - postorder_traversal(root): Postorder traversal of a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().postorder_traversal(root)  # Output: [2, 3, 1]
+
+    - level_order_traversal(root): Level order traversal of a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().level_order_traversal(root)  # Output: [[1], [2, 3]]
+
+    - height(root): Calculate the height of a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().height(root)  # Output: 2
+
+    - diameter(root): Calculate the diameter of a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().diameter(root)  # Output: 2
+
+    - lowest_common_ancestor(root, p, q): Find the lowest common ancestor of two nodes in a binary tree.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().lowest_common_ancestor(root, root.left, root.right)  # Output: TreeNode(1)
+
+    - is_balanced(root): Check if a binary tree is balanced.
+      Example:
+        root = TreeNode(1)
+        root.left = TreeNode(2)
+        root.right = TreeNode(3)
+        BinaryTree().is_balanced(root)  # Output: True
+
+    - is_identical(root1, root2): Check if two binary trees are identical.
+      Example:
+        root1 = TreeNode(1)
+        root1.left = TreeNode(2)
+        root1.right = TreeNode(3)
+        root2 = TreeNode(1)
+        root2.left = TreeNode(2)
+        root2.right = TreeNode(3)
+        BinaryTree().is_identical(root1, root2)  # Output: True
+
+    - kth_smallest(root, k): Find the kth smallest element in a BST.
+      Example:
+        root = TreeNode(3)
+        root.left = TreeNode(1)
+        root.right = TreeNode(4)
+        BinaryTree().kth_smallest(root, 1)  # Output: 1
+
+    - sorted_array_to_bst(arr): Convert a sorted array to a balanced BST.
+      Example:
+        BinaryTree().sorted_array_to_bst([1, 2, 3])  # Output: TreeNode(2) with left=1 and right=3
+
+
+    ## 8. Heaps Class
+    - min_heap(arr): Create a min heap.
+      Example:
+        Heaps.min_heap([3, 1, 4, 2])  # Output: [1, 2, 4, 3]
+
+    - max_heap(arr): Create a max heap.
+      Example:
+        Heaps.max_heap([3, 1, 4, 2])  # Output: [4, 3, 2, 1]
+
+    - heap_sort(arr): Heap sort implementation.
+      Example:
+        Heaps.heap_sort([3, 1, 4, 2])  # Output: [1, 2, 3, 4]
+
+    - kth_largest(arr, k): Find the kth largest element in an array.
+      Example:
+        Heaps.kth_largest([3, 1, 4, 2], 2)  # Output: 3
+
+    - kth_smallest(arr, k): Find the kth smallest element in an array.
+      Example:
+        Heaps.kth_smallest([3, 1, 4, 2], 2)  # Output: 2
+
+    - merge_k_sorted_lists(lists): Merge k sorted lists.
+      Example:
+        Heaps.merge_k_sorted_lists([[1, 4, 5], [1, 3, 4], [2, 6]])  # Output: [1, 1, 2, 3, 4, 4, 5, 6]
+
+    - median_of_running_stream(): Find the median of a running stream of numbers.
+      Example:
+        add_num, find_median = Heaps.median_of_running_stream()
+        add_num(1)
+        add_num(2)
+        find_median()  # Output: 1.5
+
+    - top_k_frequent_elements(arr, k): Find the top k frequent elements in an array.
+      Example:
+        Heaps.top_k_frequent_elements([1, 1, 1, 2, 2, 3], 2)  # Output: [1, 2]
+
+
+    ## 9. Graph Class
+    - add_edge(u, v): Add an edge to the graph.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        # Graph: {0: [1], 1: [0, 2], 2: [1]}
+
+    - bfs(start): Breadth-First Search (BFS) for graph traversal.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.bfs(0)  # Output: [0, 1, 2]
+
+    - dfs(start): Depth-First Search (DFS) for graph traversal.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.dfs(0)  # Output: [0, 1, 2]
+
+    - detect_cycle_undirected(): Detect a cycle in an undirected graph.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.add_edge(2, 0)
+        graph.detect_cycle_undirected()  # Output: True
+
+    - detect_cycle_directed(): Detect a cycle in a directed graph.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.add_edge(2, 0)
+        graph.detect_cycle_directed()  # Output: True
+
+    - topological_sort(): Topological sorting using Kahn's algorithm.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.topological_sort()  # Output: [0, 1, 2]
+
+    - dijkstra(start): Dijkstra's algorithm for shortest path.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.dijkstra(0)  # Output: [0, 1, 2, inf]
+
+    - bellman_ford(start): Bellman-Ford algorithm for shortest path.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.bellman_ford(0)  # Output: [0, 1, 2, inf]
+
+    - floyd_warshall(): Floyd-Warshall algorithm for shortest path.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.floyd_warshall()  # Output: [[0, 1, 2, inf], [inf, 0, 1, inf], [inf, inf, 0, inf], [inf, inf, inf, 0]]
+
+    - kruskal(): Kruskal's algorithm for minimum spanning tree.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.kruskal()  # Output: [(0, 1), (1, 2)]
+
+    - prim(): Prim's algorithm for minimum spanning tree.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.prim()  # Output: [(0, 1), (1, 2)]
+
+    - kosaraju(): Kosaraju's algorithm for strongly connected components.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.add_edge(2, 0)
+        graph.kosaraju()  # Output: [[0, 1, 2]]
+
+    - find_bridges(): Find bridges in a graph.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.find_bridges()  # Output: [(1, 2)]
+
+    - articulation_points(): Find articulation points in a graph.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.articulation_points()  # Output: [1]
+
+    - ford_fulkerson(source, sink): Ford-Fulkerson algorithm for maximum flow.
+      Example:
+        graph = Graph(4)
+        graph.add_edge(0, 1)
+        graph.add_edge(1, 2)
+        graph.ford_fulkerson(0, 2)  # Output: 1
+    """
+    return structure
 
 
 # ------------------------- Main -------------------------
