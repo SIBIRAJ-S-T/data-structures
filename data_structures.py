@@ -1996,7 +1996,7 @@ def printStructure():
         """
        
 def printCode():
-    return """
+    return '''
     # data_structures.py
 
 """
@@ -4000,7 +4000,7 @@ def printStructure():
 if __name__ == "__main__":
     printAlls()
 
-    """
+    '''
 # ------------------------- Main -------------------------
 
 if __name__ == "__main__":
